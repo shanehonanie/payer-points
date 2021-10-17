@@ -75,6 +75,7 @@ Content-Type: application/json
 Content-Type: application/json
 
 **Body**
+
 payer (string, required)
 
 points (integer, required)
