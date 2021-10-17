@@ -1,13 +1,14 @@
 import express from 'express';
 
+import { pointsRouter } from './routes/points';
+
 const PORT = 3000;
 
 const app = express();
 
-app.get('/', (req: express.Request, res: express.Response) => {
-  res.send('Hello World!');
-});
+app.use(express.json());
+app.use('/', pointsRouter);
 
 app.listen(PORT, () => {
-  return console.log(`server is listening on ${PORT}`);
+  console.log(`server is listening on ${PORT}`);
 });
