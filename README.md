@@ -35,7 +35,7 @@ spent. There are two rules for determining what points to "spend" first:
 Since storing transactions in memory is acceptable, I'm going to use 2 data structures for quick insertions, removals, and lookups.
 
 1. Hashtable - I picked this data structure for looking up point balances by payer. We don't need to store seperate transactions, only each payer and the point totals.
-2. Heap - Since we always want to pick the record with the oldest timestamp, I thought a minimum heap would be great for getting the minimum record by timestamp. We need to store the timestamp and keep the data heapified by oldest timestamp.
+2. Heap - Since we always want to pick the record with the oldest timestamp, I thought a minimum heap would be great for getting the minimum record by timestamp. To do this I convert the ISO 8601 string to an epoch timestamp and use that value to heapify the records.
 
 ## Running the Code
 
